@@ -1,99 +1,40 @@
-# Scratch Concepts Used — Catch the Ball Game
+# TY Scratch Workshop
 
-A reference guide for the blocks and concepts used in building this game.
-
----
-
-## Events (Yellow Blocks)
-
-### `When Green Flag Clicked`
-This is the **starting point** of your program. Nothing runs until the green flag is clicked. Think of it like pressing "Play" — the computer starts reading your instructions from this block downward.
-
-**Used for:** Starting the ball falling when the game begins.
+A 3 hour coding workshop for Transition Year students using Scratch. No prior coding experience needed.
 
 ---
 
-## Motion (Blue Blocks)
+## What We Build
 
-### `Go to x: () y: ()`
-Moves the sprite to a specific position on the screen. Scratch uses a coordinate grid:
-- **x** controls left/right (negative = left, positive = right)
-- **y** controls up/down (negative = down, positive = up)
-- The center of the screen is x: 0, y: 0
+### Part 1 — Catch the Ball
+A single player game where a ball falls from the sky and the player has to catch it with a paddle. Includes a score counter and a 60 second countdown timer.
 
-**Used for:** Placing the ball at the top of the screen at the start and resetting it when it falls off.
-
-### `Change y by ()`
-Moves the sprite up or down by a set amount each time it runs.
-- Positive number = moves **up**
-- Negative number = moves **down**
-
-**Used for:** Making the ball fall by changing y by -5 repeatedly.
-
-### `Y Position`
-A reporter block (oval shaped) that tells you the current y coordinate of the sprite. You can plug this into other blocks to check where the sprite is.
-
-**Used for:** Checking if the ball has fallen below the bottom of the screen.
+### Part 2 — 1v1 Paddle Game
+Building on top of Part 1, students transform their game into a 2 player competitive game. Two paddles, one ball — if you miss, the other player scores.
 
 ---
 
-## Control (Orange Blocks)
+## Workshop Materials
 
-### `Forever`
-Repeats everything inside it **endlessly** until the program stops. This is a **loop** — one of the most important concepts in programming.
-
-Without a loop, your code runs once and stops. With `forever`, it keeps going.
-
-**Used for:** Keeping the ball falling continuously throughout the game.
-
-### `If <condition> Then`
-This is a **conditional statement**. It checks if something is true, and only runs the blocks inside if it is.
-
-Think of it like a decision:
-> "IF the ball is below the screen, THEN reset it to the top"
-
-If the condition is false, the blocks inside are skipped entirely.
-
-**Used for:** Detecting when the ball reaches the bottom and resetting its position.
+| File | What it covers |
+|---|---|
+| scratch_reference.md | Block reference guide — Events, Motion, Control, Operators |
+| catcher_sprite.md | Adding the catcher paddle and mouse/touch movement |
+| variables.md | Creating a score variable |
+| timer.md | Adding a 60 second countdown timer |
+| gameover_screen.md | Game Over screen using broadcasts |
+| scratch_part2.md | 1v1 Paddle Game — bouncing ball, two players, two scores |
 
 ---
 
-## Operators (Green Blocks)
+## Workshop Structure
 
-### `Pick Random () to ()`
-Generates a **random number** between two values every time it runs. Each time the ball resets, it picks a new random x position so the ball doesn't always fall in the same spot.
-
-**Used for:** Making the ball appear at a random x position between -200 and 200.
-
-### `() < ()`
-A **comparison operator**. Checks if the value on the left is less than the value on the right. Returns true or false — this is what goes inside the `if` block's condition slot (the pointed/hexagon shaped gap).
-
-**Used for:** Checking if `y position < -170` meaning the ball has gone below the screen.
+    0:00 - 0:30     Physical activity — Human Algorithm exercise
+    0:30 - 1:30     Part 1 — Catch the Ball
+    1:30 - 3:00     Part 2 — 1v1 Paddle Game
 
 ---
 
-## How They All Work Together
+## How the Sessions Work
 
-```
-When Green Flag Clicked          ← Event: starts everything
-  go to x: (pick random...) y: 170   ← Motion + Operator: place ball at random spot at top
-  forever                         ← Control: loop forever
-    change y by -5                ← Motion: ball falls
-    if <y position < -170> then   ← Control + Operator: check if ball hit bottom
-      go to x: (pick random...) y: 170  ← Motion + Operator: reset ball to top
-```
-
----
-
-## Key Programming Concepts Summary
-
-| Concept | Scratch Block | What it does |
-|---|---|---|
-| Event | `When Green Flag Clicked` | Triggers the start of the program |
-| Loop | `Forever` | Repeats code endlessly |
-| Conditional | `If Then` | Makes decisions based on true/false |
-| Operator | `Pick Random` | Generates a random number |
-| Operator | `< (less than)` | Compares two values |
-| Motion | `Change y by` | Moves sprite up or down |
-| Motion | `Go to x: y:` | Teleports sprite to a position |
-| Reporter | `Y Position` | Reads the sprite's current y coordinate |
+Students are given a baseline project to start from and reference sheets to guide them. The idea is not to give them everything — they figure out each step with prompts and hints, only using the reference sheets if they get stuck.
